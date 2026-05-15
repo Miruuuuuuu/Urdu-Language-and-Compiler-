@@ -1,0 +1,12 @@
+#   Conditions Test
+shuru
+
+ginti age = 25
+
+agar age >= 18 aur age < 60 then
+    dikhao("Allowed")
+warna
+    dikhao("Not Allowed")
+bas
+
+khatam

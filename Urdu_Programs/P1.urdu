@@ -1,0 +1,28 @@
+shuru
+
+# variables
+ginti a = 10
+ginti b = 20
+
+# function with return
+kaam add(x, y)
+    ginti result = x + y
+    wapas result
+bas
+
+# function without return (procedure)
+kaam show()
+    dikhao("Hello from Urdu Language")
+bas
+
+# function calls
+ginti sum = add(a, b)
+
+dikhao("Sum =", sum)
+
+show()
+
+# direct expression in print
+dikhao("Direct result =", add(5, 12))
+
+khatam

@@ -1,0 +1,23 @@
+shuru
+
+ginti age = 20
+decimal cgpa = 3.75
+text name = "Ali"
+
+agar age >= 18 then
+    dikhao("Adult")
+warna
+    dikhao("Minor")
+bas
+
+bar_bar i = 1 se 5 tak
+    dikhao(i)
+bas
+
+kaam add(a, b)
+    wapas a + b
+bas
+
+list nums = [1,2,3]
+
+khatam

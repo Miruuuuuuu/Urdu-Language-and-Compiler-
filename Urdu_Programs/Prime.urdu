@@ -1,0 +1,32 @@
+shuru
+
+ginti num = likho("Enter number=")
+
+ginti count = 0
+ginti i = 1
+
+# =========================
+# COUNT FACTORS
+# =========================
+
+jabtak i <= num
+
+    agar num % i == 0 then
+        count = count + 1
+    bas
+
+    i = i + 1
+
+bas
+
+# =========================
+# CHECK PRIME / COMPOSITE
+# =========================
+
+agar count == 2 then
+    dikhao(num, "is Prime")
+warna
+    dikhao(num, "is Composite")
+bas
+
+khatam

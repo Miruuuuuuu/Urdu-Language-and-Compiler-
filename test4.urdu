@@ -1,0 +1,10 @@
+# Functions Test
+shuru
+
+kaam add(a, b)
+    wapas a + b
+bas
+ginti res=add(2,3)
+dikhao(res)
+
+khatam

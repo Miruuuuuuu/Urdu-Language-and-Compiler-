@@ -1,0 +1,77 @@
+shuru
+
+# =========================
+# DATABASE
+# =========================
+
+list students = ["Ali", "Ahmed", "Sara", "Ayesha"]
+
+# =========================
+# SHOW STUDENTS
+# =========================
+
+kaam showStudents()
+    dikhao("=== Student List ===")
+
+    bar_bar i = 0 se 3 tak
+        dikhao(students[i])
+    bas
+bas
+
+# =========================
+# ADD STUDENT
+# =========================
+
+kaam addStudent(name)
+    dalo students name
+    dikhao("Added:", name)
+bas
+
+# =========================
+# REMOVE STUDENT
+# =========================
+
+kaam removeStudent(name)
+
+    nikalo students name
+    dikhao("Removed:", name)
+
+bas
+
+# =========================
+# SEARCH STUDENT
+# =========================
+
+kaam findStudent(name)
+
+    ginti found = 0
+
+    bar_bar i = 0 se 3 tak
+        agar students[i] == name then
+            dikhao("Found:", name)
+            found = 1
+        bas
+    bas
+
+    agar found == 0 then
+        dikhao("Not Found")
+    bas
+
+bas
+
+# =========================
+# MAIN PROGRAM
+# =========================
+
+dikhao("=== ERP SYSTEM ===")
+
+showStudents()
+
+addStudent("Bilal")
+removeStudent("Ahmed")
+
+showStudents()
+
+findStudent("Sara")
+
+khatam

@@ -1,0 +1,14 @@
+shuru
+
+list nums = [1, 2, 3]
+
+dikhao(nums)
+
+kaam add(a,b)
+    ginti result= a+b
+    wapas result
+bas 
+
+add(2,4)
+
+khatam

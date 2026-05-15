@@ -1,0 +1,135 @@
+shuru
+
+# =========================
+# VARIABLES + DATATYPES
+# =========================
+
+ginti a = 10
+ginti b = 5
+decimal pi = 3.14
+text name = "Ali"
+sachjhoot flag = sach
+
+dikhao("Name =", name)
+dikhao("PI =", pi)
+
+# =========================
+# ARITHMETIC OPERATIONS
+# =========================
+
+ginti sum = a + b
+ginti diff = a - b
+ginti mul = a * b
+ginti div = a / b
+ginti mod = a % b
+
+dikhao("Sum =", sum)
+dikhao("Diff =", diff)
+dikhao("Mul =", mul)
+dikhao("Div =", div)
+dikhao("Mod =", mod)
+
+# =========================
+# COMPARISON + LOGICAL
+# =========================
+
+agar a > b aur b < 10 then
+    dikhao("Condition TRUE")
+warna
+    dikhao("Condition FALSE")
+bas
+
+ginti x = 10
+ginti y = 20
+
+agar x < y ya x == y then
+    dikhao("Logical OR TRUE")
+bas
+
+# =========================
+# LIST OPERATIONS
+# =========================
+
+list nums = [1, 2, 3, 4, 5]
+
+dikhao("List =", nums)
+
+# =========================
+# FOR LOOP
+# =========================
+
+bar_bar i = 1 se 5 tak
+    dikhao("For loop i =", i)
+bas
+
+# =========================
+# WHILE LOOP
+# =========================
+
+ginti j = 1
+
+jabtak j <= 5
+    dikhao("While loop j =", j)
+    j = j + 1
+bas
+
+# =========================
+# DO-WHILE STYLE LOOP (SIMULATED)
+# =========================
+
+ginti k = 1
+
+bar_bar
+    dikhao("Do-While k =", k)
+    k = k + 1
+jabtak k <= 3
+bas
+
+# =========================
+# NESTED LOOP
+# =========================
+
+bar_bar i = 1 se 3 tak
+    bar_bar j = 1 se 2 tak
+        dikhao("Nested i =", i, " j =", j)
+    bas
+bas
+
+# =========================
+# FUNCTION WITH RETURN
+# =========================
+
+kaam add(a, b)
+    ginti result = a + b
+    wapas result
+bas
+
+kaam multiply(a, b)
+    wapas a * b
+bas
+
+ginti res1 = add(10, 20)
+ginti res2 = multiply(3, 4)
+
+dikhao("Add result =", res1)
+dikhao("Multiply result =", res2)
+
+# =========================
+# FUNCTION WITHOUT RETURN
+# =========================
+
+kaam greet(name)
+    dikhao("Hello", name)
+bas
+
+greet("Urdu Compiler")
+
+# =========================
+# COMPLEX EXPRESSION TEST
+# =========================
+
+ginti final = (a + b) * 2
+
+dikhao("Final =", final)
+
+khatam

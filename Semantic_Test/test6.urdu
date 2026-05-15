@@ -1,0 +1,12 @@
+shuru
+
+ginti x = 10
+
+agar x > 5 then
+    ginti y = 20
+    dikhao(y)
+bas
+
+dikhao(y)
+
+khatam

@@ -1,0 +1,18 @@
+shuru
+
+ginti a = 10 + + 5
+
+dikhao "Missing parentheses"
+
+agar > 20 then
+    dikhao("Still parses inside bad if")
+bas
+
+list nums = [1, 2,, 4]
+
+@
+
+ginti ok = 99
+dikhao(ok)
+
+khatam

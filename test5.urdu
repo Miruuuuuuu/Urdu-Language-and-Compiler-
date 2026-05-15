@@ -1,0 +1,9 @@
+# List Test
+shuru
+
+list nums = [1,2,3]
+dikhao(nums)
+dalo nums 5
+dikhao(nums)
+
+khatam

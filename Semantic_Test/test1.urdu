@@ -1,0 +1,11 @@
+shuru
+
+ginti x = 10
+decimal y = 3.5
+text name = "Ali"
+
+dikhao(x)
+dikhao(y)
+dikhao(name)
+
+khatam

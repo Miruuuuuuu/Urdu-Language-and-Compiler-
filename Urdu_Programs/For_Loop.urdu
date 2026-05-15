@@ -1,0 +1,15 @@
+shuru
+
+dikhao("Forward For Loop")
+bar_bar i = 1 se 5 tak
+    dikhao(i)
+bas
+
+
+dikhao("Backward For Loop")
+
+bar_bar i = 5 se 1 tak
+    dikhao(i)
+bas
+
+khatam

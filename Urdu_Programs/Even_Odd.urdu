@@ -1,0 +1,13 @@
+shuru
+
+ginti num = likho("number likho=")
+
+ginti rem = num % 2
+
+agar rem == 0 then
+    dikhao("Even Number")
+warna
+    dikhao("Odd Number")
+bas
+
+khatam

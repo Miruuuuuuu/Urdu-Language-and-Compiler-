@@ -1,0 +1,12 @@
+# Loops Test 
+shuru
+
+bar_bar i = 1 se 5 tak
+    dikhao(i)
+bas
+ginti i=3
+jabtak i < 10
+    i = i + 1
+bas
+dikhao("Value of i=",i)
+khatam

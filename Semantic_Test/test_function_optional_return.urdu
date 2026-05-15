@@ -1,0 +1,15 @@
+shuru
+
+kaam add(a, b)
+    wapas a + b
+bas
+
+kaam show()
+    dikhao("inside show")
+bas
+
+dikhao(add(2, 3))
+show()
+dikhao(show())
+
+khatam
