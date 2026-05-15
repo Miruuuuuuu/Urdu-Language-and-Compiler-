@@ -78,7 +78,9 @@ class Interpreter:
 
     def visit_Print(self, node):
         values = [self.eval(value) for value in node.values]
+        print("\033[96m", end="")
         print(*values)
+        print("\033[0m", end="")
 
     def visit_If(self, node):
         statements = node.then_block if self.eval_condition(node.condition) else node.else_block
@@ -190,12 +192,20 @@ class Interpreter:
             right_val = self.eval(right)
 
             if op == ">":
+                if not (isinstance(left_val, (int, float)) and isinstance(right_val, (int, float))):
+                    raise Exception(f"Runtime Error: Cannot compare {type(left_val).__name__} and {type(right_val).__name__} with >")
                 return left_val > right_val
             if op == "<":
+                if not (isinstance(left_val, (int, float)) and isinstance(right_val, (int, float))):
+                    raise Exception(f"Runtime Error: Cannot compare {type(left_val).__name__} and {type(right_val).__name__} with <")
                 return left_val < right_val
             if op == ">=":
+                if not (isinstance(left_val, (int, float)) and isinstance(right_val, (int, float))):
+                    raise Exception(f"Runtime Error: Cannot compare {type(left_val).__name__} and {type(right_val).__name__} with >=")
                 return left_val >= right_val
             if op == "<=":
+                if not (isinstance(left_val, (int, float)) and isinstance(right_val, (int, float))):
+                    raise Exception(f"Runtime Error: Cannot compare {type(left_val).__name__} and {type(right_val).__name__} with <=")
                 return left_val <= right_val
             if op == "==":
                 return left_val == right_val

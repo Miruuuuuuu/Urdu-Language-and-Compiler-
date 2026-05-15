@@ -179,13 +179,13 @@ class SemanticAnalyzer:
 
         func = self.functions[node.name]
         if len(node.args) != len(func["params"]):
-            print(f"Warning: argument count mismatch for function '{node.name}'")
+            print(f"\033[93mWarning: argument count mismatch for function '{node.name}'\033[0m")
 
         for arg in node.args:
             self.evaluate(arg)
 
         if used_as_expression and not func["has_return"]:
-            print(f"Warning: function '{node.name}' returns nothing")
+            print(f"\033[93mWarning: function '{node.name}' returns nothing\033[0m")
 
     def check_type(self, type_, value, prefix):
         if value is None:
@@ -230,14 +230,27 @@ class SemanticAnalyzer:
             if left_val is None or right_val is None:
                 return None
 
-            if op == ">":
-                return left_val > right_val
-            if op == "<":
-                return left_val < right_val
-            if op == ">=":
-                return left_val >= right_val
-            if op == "<=":
-                return left_val <= right_val
+            if op in (">", "<", ">=", "<="):
+                if (isinstance(left_val, (int, float)) and not isinstance(left_val, bool)
+                        and isinstance(right_val, (int, float)) and not isinstance(right_val, bool)):
+                    if op == ">":
+                        return left_val > right_val
+                    if op == "<":
+                        return left_val < right_val
+                    if op == ">=":
+                        return left_val >= right_val
+                    if op == "<=":
+                        return left_val <= right_val
+                if isinstance(left_val, str) and isinstance(right_val, str):
+                    if op == ">":
+                        return left_val > right_val
+                    if op == "<":
+                        return left_val < right_val
+                    if op == ">=":
+                        return left_val >= right_val
+                    if op == "<=":
+                        return left_val <= right_val
+                raise Exception(f"Type Error: invalid operands for '{op}'")
             if op == "==":
                 return left_val == right_val
             if op == "!=":

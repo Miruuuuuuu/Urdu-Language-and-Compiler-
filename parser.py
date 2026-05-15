@@ -406,6 +406,32 @@ parser = yacc.yacc(write_tables=False, errorlog=yacc.NullLogger())
 
 
 # ==========================================
+# FUNCTION TO DISPLAY TOKENS
+# ==========================================
+def display_tokens(data):
+    """Display all tokens from the lexer"""
+    print("\n===== LEXICAL ANALYSIS (TOKENS) =====\n")
+    
+    # Reset lexer and feed the data
+    lexer.input(data)
+    
+    token_list = []
+    while True:
+        token = lexer.token()
+        if not token:
+            break
+        token_list.append(token)
+        print(
+            f"Line {token.lineno:<3} | "
+            f"{token.type:<15} | "
+            f"{token.value}"
+        )
+    
+    print("\n===== LEXICAL ANALYSIS COMPLETED =====\n")
+    return token_list
+
+
+# ==========================================
 # RUNNER
 # ==========================================
 if __name__ == "__main__":
@@ -420,34 +446,37 @@ if __name__ == "__main__":
     source_lines[:] = data.splitlines(True)
     lexer.lineno = 1
 
-    print("\n===== PARSING STARTED =====\n")
+    # Display tokens from lexer first
+    display_tokens(data)
+
+    print("\n\033[94m===== PARSING STARTED =====\033[0m\n")
 
     ast = parser.parse(data, lexer=lexer)
 
     error_count = len(syntax_errors) + len(lexical_errors)
 
     if error_count:
-        print(f"\n===== {error_count} ERROR(S) FOUND =====")
+        print(f"\n\033[91m===== {error_count} ERROR(S) FOUND =====")
         print(f"Syntax errors: {len(syntax_errors)}")
-        print(f"Lexer errors: {len(lexical_errors)}\n")
-        print("\n===== PARSING COMPLETED =====\n")
+        print(f"Lexer errors: {len(lexical_errors)}\033[0m\n")
+        print("\n\033[94m===== PARSING COMPLETED =====\033[0m\n")
         raise SystemExit
 
-    print("\n===== PARSING COMPLETED =====\n")
+    print("\n\033[94m===== PARSING COMPLETED =====\033[0m\n")
 
-    print("\n===== SEMANTIC ANALYSIS =====\n")
+    print("\n\033[94m===== SEMANTIC ANALYSIS =====\033[0m\n")
     try:
         SemanticAnalyzer().analyze(ast)
     except Exception as error:
-        print(error)
+        print(f"\033[91m{error}\033[0m")
         raise SystemExit
 
-    print("\n===== EXECUTION START =====\n")
+    print("\n\033[94m===== EXECUTION START =====\033[0m\n")
     from interpreter import Interpreter
 
     try:
         Interpreter().run(ast)
     except Exception as error:
-        print(error)
+        print(f"\033[91m{error}\033[0m")
 
-    print("\n===== EXECUTION END =====\n")
+    print("\n\033[94m===== EXECUTION END =====\033[0m\n")

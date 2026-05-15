@@ -261,25 +261,27 @@ lexer = lex.lex()
 
 if __name__ == "__main__":
 
-    print("\n===== URDU LANGUAGE LEXER =====\n")
+    print("\n\033[94m===== URDU LANGUAGE LEXER =====\033[0m\n")
 
-    filename = input("Enter source file name: ")
+    filename = input("Enter source file name (.urdu only): ").strip()
+
+    # Check file extension
+    if not filename.endswith(".urdu"):
+        print("\n\033[91mError: Only '.urdu' files are allowed\033[0m")
+        exit()
 
     try:
-
         with open(filename, "r", encoding="utf-8") as file:
             data = file.read()
 
     except FileNotFoundError:
-
-        print(f"\nError: File '{filename}' not found")
-
+        print(f"\n\033[91mError: File '{filename}' not found\033[0m")
         exit()
 
     # feed source code to lexer
     lexer.input(data)
 
-    print("\n===== TOKENS =====\n")
+    print("\n\033[94m===== TOKENS =====\033[0m\n")
 
     # tokenize input
     while True:
@@ -290,9 +292,9 @@ if __name__ == "__main__":
             break
 
         print(
-            f"Line {token.lineno:<3} | "
+            f"\033[96mLine {token.lineno:<3} | "
             f"{token.type:<15} | "
-            f"{token.value}"
+            f"{token.value}\033[0m"
         )
 
-    print("\n===== LEXICAL ANALYSIS COMPLETED =====\n")
+    print("\n\033[94m===== LEXICAL ANALYSIS COMPLETED =====\033[0m\n")
